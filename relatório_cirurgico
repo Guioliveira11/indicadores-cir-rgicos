@@ -1,0 +1,26 @@
+SELECT DISTINCT
+    p.nome_paciente, 
+    p.prontuario, 
+	c.id_atendimento as atendimento,
+    c.nr_cirurgia as cod_cirurgia, 
+    c.data_cirurgia, 
+    c.procedimento_proposto as procedimento,
+	c.codigo_sus as código_procedimento,
+	m.nome_medico,
+    c.especialidade, 
+    c.tipo, 
+    c.status
+	
+FROM 
+    tasy.pp_aviso_cirurgia AS c
+	
+LEFT JOIN 
+    tasy.pp_paciente AS p 
+    ON p.id_paciente = c.id_paciente
+
+--Concatenar as tabelas cat_medico com a pp_aviso_cirurgia através do cd do médico 
+LEFT JOIN 
+    tasy.cat_medico AS m
+    ON c.cd_medico_cirurgiao = m.cd_pessoa_fisica
+
+order by nome_paciente

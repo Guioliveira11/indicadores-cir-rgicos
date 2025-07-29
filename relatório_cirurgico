@@ -1,12 +1,12 @@
 SELECT DISTINCT
     p.nome_paciente, 
     p.prontuario, 
-	c.id_atendimento as atendimento,
+    c.id_atendimento as atendimento,
     c.nr_cirurgia as cod_cirurgia, 
     c.data_cirurgia, 
     c.procedimento_proposto as procedimento,
-	c.codigo_sus as código_procedimento,
-	m.nome_medico,
+    c.codigo_sus as código_procedimento,
+    m.nome_medico,
     c.especialidade, 
     c.tipo, 
     c.status
